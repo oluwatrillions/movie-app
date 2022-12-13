@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import './App.css'
 import Movies from './Movies';
 import axios from 'axios'
+import Select from 'react-select'
+
 
 function App() {
     const API_KEY = '98cbfa52'
@@ -11,6 +13,12 @@ function App() {
         const [search, setSearch] = useState('')
         const [movies, setMovies] = useState([])
         const [category, setCategory] = useState('')
+        const [choose, setChoose] = useState('')
+        const options = [
+                        { value: 'movies', label: 'Movies' },
+                        { value: 'episode', label: 'Episode' },
+                        { value: 'series', label: 'Series' },
+                        ];
 
             useEffect(() => {
                 axios(movie_api)
@@ -28,7 +36,8 @@ function App() {
                         })         
     }
     
-     const categoryBtn = async (e) => {
+    const categoryBtn = async (e) => {
+         
         const categoryURL = `https://www.omdbapi.com/?s=${category}&apikey=${API_KEY}`
 
             const info = await axios(categoryURL)
@@ -42,12 +51,16 @@ function App() {
             <div className='search'>
                 <h2>Movie App</h2>
                 <div className='search-box'>
-                        <input type='text' value={search} onChange={((e) => setSearch(e.target.value))} />
+                        <input type='text' placeholder='Enter movie name' value={search} onChange={((e) => setSearch(e.target.value))} />
                         <button onClick={() => searchBtn(search)}>Search</button>
                 </div>
                 <div className='category'>
-                        <input type='text' value={category} onChange={((e) => setCategory(e.target.value))} />
-                        <button onClick={() => categoryBtn(category)}>Category</button>
+                    <Select
+                        defaultValue={category}
+                        onChange={setCategory}
+                        options={options}
+                    />
+                    <button onClick={() => categoryBtn(search)}>Search</button>
                 </div>
             </div>
             <div className="App">           

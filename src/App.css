@@ -34,6 +34,12 @@ div {
 
 .search h2 {
     width: 30vw;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-weight: 300;
+    font-size: 2em;
 }
 
 .search-box input {
