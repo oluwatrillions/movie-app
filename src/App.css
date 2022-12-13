@@ -45,6 +45,11 @@ div {
 .search-box input {
     width: 15vw;
     height: 4vh;
+    border: none;
+    outline: none;
+    padding: 0 .5em;
+    font-size: 1.2em;
+    border-radius: 0.2em;
 }
 
 .search-box {
@@ -68,4 +73,9 @@ button {
     width: 6em;
     font-size: 1em;
     height: 4vh;
+    background-color: bisque;
+    border: none;
+    outline: none;
+    font-size: 1.1em;
+    border-radius: .5em;
 }
