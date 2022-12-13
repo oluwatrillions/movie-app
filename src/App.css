@@ -15,13 +15,13 @@ div {
 
 .App {
     width: 100vw;
-    min-height: 90vh;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: rgb(71, 62, 62) !important;
+    background-color: rgb(71, 62, 62);
     padding: 2em;
-    overflow: scroll;
+    overflow:-moz-hidden-unscrollable;
     gap: 2em;
 }
 
