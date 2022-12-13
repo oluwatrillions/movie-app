@@ -1,0 +1,31 @@
+*,
+div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.movie-div {
+    height: 550px;
+    gap: 1em;
+    overflow: hidden;
+}
+
+.movie-div img {
+    height: 450px;
+    width: 300px;
+}
+
+.movie-div h2 {
+    font-size: 1.1em;
+    color: whitesmoke;
+    width: 20vw;
+    font-weight: 300;
+}
+
+.movie-div h5 {
+    font-size: 0.9em;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+}
