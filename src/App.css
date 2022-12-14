@@ -3,6 +3,7 @@ div {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .container {
@@ -15,7 +16,7 @@ div {
 
 .App {
     width: 100vw;
-    height: auto;
+    max-height: 90vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -28,8 +29,9 @@ div {
 .search {
     display: flex;
     justify-content: center;
-    min-height: 10vh;
+    height: 10em;
     align-items: center;
+    padding: 3vh 0;
 }
 
 .search h2 {

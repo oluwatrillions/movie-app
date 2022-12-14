@@ -8,6 +8,7 @@ import Select from 'react-select'
 function App() {
     const API_KEY = '98cbfa52'
     const movie_api = `https://www.omdbapi.com/?s=avengers&apikey=${API_KEY}`
+
     
 
         const [search, setSearch] = useState('')
@@ -27,6 +28,7 @@ function App() {
                  await axios(searchURL)
                         .then((response) => {
                             setMovies(response.data.Search)
+                            console.log(response.data.Search);
                         })         
     }
     
