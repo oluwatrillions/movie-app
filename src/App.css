@@ -9,29 +9,24 @@ div {
 .container {
     height: 100vh;
     width: 100vw;
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(71, 62, 62);
+    display: block;
+    background-color: rgb(71, 62, 62);    
 }
 
 .App {
-    width: 100vw;
-    max-height: 90vh;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: rgb(71, 62, 62);
-    padding: 2em;
-    overflow:-moz-hidden-unscrollable;
-    gap: 2em;
+    column-gap: 2em;
+    padding-left: 7vw;
+    padding-bottom: 2em;
 }
 
 .search {
     display: flex;
-    justify-content: center;
-    height: 10em;
     align-items: center;
-    padding: 3vh 0;
+    padding: 4vh 0;
 }
 
 .search h2 {
@@ -61,13 +56,12 @@ div {
 }
 
 .category {
-    display: flex;
     gap: 2em;
-    width: 30vw;
+    width: 15vw;
+    color: rgb(48, 45, 45);
 }
 
 .category input {
-    width: 15vw;
     height: 4vh;
 }
 
@@ -75,7 +69,6 @@ button {
     width: 6em;
     font-size: 1em;
     height: 4vh;
-    background-color: bisque;
     border: none;
     outline: none;
     font-size: 1.1em;

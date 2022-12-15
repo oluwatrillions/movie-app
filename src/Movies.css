@@ -5,15 +5,20 @@ div {
     box-sizing: border-box;
 }
 
+.movie-container {
+    margin-top: 2vh;
+    display: flex;
+    justify-content: center;
+}
+
 .movie-div {
-    height: 550px;
-    gap: 1em;
+    height: 50vh;
     overflow: hidden;
 }
 
 .movie-div img {
-    height: 450px;
-    width: 300px;
+    height: 45vh;
+    width: 18vw;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center fixed;
@@ -22,7 +27,7 @@ div {
 .movie-div h2 {
     font-size: 1.1em;
     color: whitesmoke;
-    width: 20vw;
+    width: 18vw;
     font-weight: 300;
 }
 

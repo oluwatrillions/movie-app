@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import './App.css'
 import Movies from './Movies';
 import axios from 'axios'
-import Select from 'react-select'
+import Select from 'react-dropdown-select'
+
 
 
 function App() {
@@ -13,7 +14,13 @@ function App() {
 
         const [search, setSearch] = useState('')
         const [movies, setMovies] = useState([])
-        const [category, setCategory] = useState('')
+        const [category, setCategory] = useState([])
+        
+        const options = [
+                { value: 'episode', label: 'Episode' },
+                { value: 'movies', label: 'Movies' },
+                { value: 'series', label: 'Series'}
+            ]
 
             useEffect(() => {
                 axios(movie_api)
@@ -32,14 +39,15 @@ function App() {
                         })         
     }
     
-//     const categoryBtn = async (e) => {        
-//         const categoryURL = `https://www.omdbapi.com/?s=${category}&apikey=${API_KEY}`
-
-//             const info = await axios(categoryURL)
-//                         .then((response) => {
-//                             setMovies(response.data.Search)
-//                         }).catch(error => console.log(error))         
-// }
+    const categoryBtn = async (value) => {        
+        const categoryURL = `https://www.omdbapi.com/?s=${category}&apikey=${API_KEY}`
+        
+            const info = await axios(categoryURL)
+                        .then((response) => {
+                            setMovies(response.data.Search)
+                        }).catch(error => console.log(error))         
+    }
+    
     
     return (
         <div className='container'>
@@ -49,16 +57,14 @@ function App() {
                         <input type='text' placeholder='Enter movie name' value={search} onChange={((e) => setSearch(e.target.value))} />
                         <button onClick={() => searchBtn(search)}>Search</button>
                 </div>
-                {/* <div className='category'>
-                    <input type='text' placeholder='movies, series, episode' value={category} onChange={((e) => setCategory(e.target.value))} />                  
-                    <button onClick={()=>categoryBtn(category)}>Category</button>
-                </div> */}
+                <div className='category'>
+                    <Select options={options} background-color='red' />
+                </div>
             </div>
             <div className="App">           
-            {movies.map((movie) => (
-                <Movies key={ movie.imdbID} {...movie} />
-            ))
-            }
+                {movies.map((movie) => (
+                    <Movies key={ movie.imdbID} {...movie} />
+                ))}
             </div>
         </div>
   );
