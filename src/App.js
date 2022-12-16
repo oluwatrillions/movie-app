@@ -35,18 +35,18 @@ function App() {
                  await axios(searchURL)
                         .then((response) => {
                             setMovies(response.data.Search)
-                            console.log(response.data.Search);
+                            console.log(response.data.Search)
                         })         
     }
     
-    const categoryBtn = async (value) => {        
-        const categoryURL = `https://www.omdbapi.com/?s=${category}&apikey=${API_KEY}`
+    // const categoryBtn = async (value) => {        
+    //     const categoryURL = `https://www.omdbapi.com/?s=${category}&apikey=${API_KEY}`
         
-            const info = await axios(categoryURL)
-                        .then((response) => {
-                            setMovies(response.data.Search)
-                        }).catch(error => console.log(error))         
-    }
+    //         const info = await axios(categoryURL)
+    //                     .then((response) => {
+    //                         setMovies(response.data.Search)
+    //                     }).catch(error => console.log(error))         
+    // }
     
     
     return (
@@ -57,9 +57,9 @@ function App() {
                         <input type='text' placeholder='Enter movie name' value={search} onChange={((e) => setSearch(e.target.value))} />
                         <button onClick={() => searchBtn(search)}>Search</button>
                 </div>
-                <div className='category'>
+                {/* <div className='category'>
                     <Select options={options} background-color='red' />
-                </div>
+                </div> */}
             </div>
             <div className="App">           
                 {movies.map((movie) => (
